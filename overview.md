@@ -36,26 +36,31 @@ version: '3'
 
 services:
   processr:
-    replicas: 1
+    deploy:
+      replicas: 1
     build: processr
     environment:
-      - TRAINR_ENDPOINT=$TRAINR_ENDPOINT
+      - TRAINR_ENDPOINT=http://trainr:7777
     ports:
       - "8888:8888"
 
   trainr:
-    replicas: 1
+    deploy:
+      replicas: 1
     build: trainr
+    environment:
+      - PREDICTR_ENDPOINT=http://predictr:9999
     ports:
       - "7777:7777"
     volumes:
-      - models:/models
+      - ./models:/app/models
 
   predictr:
-    replicas: 1
+    deploy:
+      replicas: 1
     build: predictr
     ports:
-      - "6666:6666"
+      - "9999:9999"
     volumes:
-      - models:/models
+      - ./models:/app/models
 ```
