@@ -8,13 +8,15 @@ r_classes = {y: x for x, y in classes.items()}
 
 # function to process data and return it in correct format
 def process_data(data):
-    processed = [{
-        "sepal_length": d.sepal_length,
-        "sepal_width": d.sepal_length,
-        "petal_length": d.petal_length,
-        "petal_width": d.petal_width,
-        "flower_class": d.flower_class
-    } for d in data]
+    processed = [
+        {
+            "sepal_length": d.sepal_length,
+            "sepal_width": d.sepal_length,
+            "petal_length": d.petal_length,
+            "petal_width": d.petal_width,
+            "flower_class": d.flower_class,
+        }
+        for d in data
+    ]
 
     return processed
-

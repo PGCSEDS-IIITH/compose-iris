@@ -7,7 +7,7 @@ from utils import init_model, train_model
 from typing import List
 
 
-PREDICTR_ENDPOINT = os.getenv('PREDICTR_ENDPOINT')
+PREDICTR_ENDPOINT = os.getenv("PREDICTR_ENDPOINT")
 
 # defining the main app
 app = FastAPI(title="trainr", docs_url="/")
@@ -23,6 +23,7 @@ class TrainIn(BaseModel):
     petal_length: float
     petal_width: float
     flower_class: str
+
 
 # Route definitions
 @app.get("/ping")

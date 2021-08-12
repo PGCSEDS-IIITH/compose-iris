@@ -13,15 +13,18 @@ class QueryIn(BaseModel):
     petal_length: float
     petal_width: float
 
+
 # class which is returned in the response
 class QueryOut(BaseModel):
     flower_class: str
+
 
 # Route definitions
 @app.get("/ping")
 # Healthcheck route to ensure that the API is up and running
 def ping():
     return {"ping": "pong"}
+
 
 @app.post("/predict_flower", response_model=QueryOut, status_code=200)
 # Route to do the prediction using the ML model defined.
@@ -31,12 +34,14 @@ def predict_flower(query_data: QueryIn):
     output = {"flower_class": predict(query_data)}
     return output
 
+
 @app.post("/reload_model", status_code=200)
 # Route to reload the model from file
 def reload_model():
     load_model()
     output = {"detail": "Model successfully loaded"}
     return output
+
 
 # Main function to start the app when main.py is called
 if __name__ == "__main__":

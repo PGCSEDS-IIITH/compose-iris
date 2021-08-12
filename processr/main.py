@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from utils import process_data
 
-TRAINR_ENDPOINT = os.getenv('TRAINR_ENDPOINT')
+TRAINR_ENDPOINT = os.getenv("TRAINR_ENDPOINT")
 
 # defining the main app
 app = FastAPI(title="processr", docs_url="/")
@@ -18,6 +18,7 @@ class DataIn(BaseModel):
     petal_length: float
     petal_width: float
     flower_class: str
+
 
 # Route definitions
 @app.get("/ping")
