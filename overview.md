@@ -9,7 +9,7 @@
 
 
 ## Dataset
-IRIS Flower Predicting dataset (tentative)
+Wine Predicting dataset (https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html#sklearn.datasets.load_wine)
 
 ## Microservices
 
