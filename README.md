@@ -18,3 +18,8 @@ Implement this stack for some dataset of your choice
 
 ## Submission
 Submit a link to your forked repository
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
